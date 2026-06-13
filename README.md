@@ -126,7 +126,7 @@ Make sure you have the following installed on your machine:
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="./docs/Architecture Diagram.png" 
+  <img src="./documents/Architecure Diagram.png" 
        alt="URL Shortener Architecture Diagram"
        width="900"/>
 </p>
@@ -139,9 +139,9 @@ Make sure you have the following installed on your machine:
 
 🎥 **Watch the complete walkthrough of the URL Shortener project**
 
-<a href="https://youtu.be/yQIcImkHYFk">
 
-</a>
+▶️ YouTube Video: https://youtu.be/yQIcImkHYFk
+
 
 </p>
 
