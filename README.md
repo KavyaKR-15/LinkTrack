@@ -123,8 +123,34 @@ Make sure you have the following installed on your machine:
 
 ---
 
+## 🏗️ System Architecture
+
+<p align="center">
+  <img src="./docs/Architecture Diagram.png" 
+       alt="URL Shortener Architecture Diagram"
+       width="900"/>
+</p>
+
+---
+
+## 🎬 Project Demo & Explanation
+
+<p align="center">
+
+🎥 **Watch the complete walkthrough of the URL Shortener project**
+
+<a href="https://youtu.be/yQIcImkHYFk">
+
+</a>
+
+</p>
+
+---
+
 ## 🔒 Security & Performance Features
 
 - **Async Redirection Logs**: The backend handles user redirection immediately (302 status code), saving analytics visit details asynchronously so that the redirection latency for the end user is minimized.
 - **Route Authorization Check**: Client-side router protection redirects unauthenticated users to the Home page, while the API checks JWT validation headers for database security.
 - **Error Boundaries & Safety**: Features strict safety paths to ignore standard browser requests like `/favicon.ico` preventing incorrect click and analytics measurements.
+
+“This project is a part of a hackathon run by https://katomaran.com " 
