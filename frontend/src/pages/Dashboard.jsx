@@ -8,6 +8,8 @@ import {
   QrCode, ExternalLink, RefreshCw, Plus, HelpCircle
 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function Dashboard() {
   const { user, loading: authLoading } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -106,7 +108,7 @@ export default function Dashboard() {
   };
 
   const handleCopy = (id, shortCode) => {
-    const fullShortUrl = `http://localhost:5000/${shortCode}`;
+    const fullShortUrl = `${API_URL}/${shortCode}`;
     navigator.clipboard.writeText(fullShortUrl);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
@@ -224,7 +226,7 @@ export default function Dashboard() {
               </thead>
               <tbody>
                 {urls.map((url) => {
-                  const fullShortUrl = `http://localhost:5000/${url.shortCode}`;
+                  const fullShortUrl = `${API_URL}/${url.shortCode}`;
                   const expired = isExpired(url.expiryDate);
 
                   return (

@@ -7,6 +7,8 @@ import {
   Globe, Shield, Eye, HelpCircle, AlertCircle
 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function Analytics() {
   const { id } = useParams();
   const { user, loading: authLoading } = useContext(AuthContext);
@@ -263,8 +265,8 @@ export default function Analytics() {
           <h2>{urlInfo.title}</h2>
           <div className="links-group mt-1">
             <span className="info-label">Short link:</span>
-            <a href={`http://localhost:5000/${urlInfo.shortCode}`} target="_blank" rel="noopener noreferrer" className="short-link mono">
-              http://localhost:5000/{urlInfo.shortCode}
+            <a href={`${API_URL}/${urlInfo.shortCode}`} target="_blank" rel="noopener noreferrer" className="short-link mono">
+              {API_URL}/{urlInfo.shortCode}
             </a>
           </div>
           <div className="links-group mt-1">
