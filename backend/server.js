@@ -1,7 +1,17 @@
+const dns = require('dns');
+// Set custom DNS resolvers to bypass local DNS resolution failures for MongoDB Atlas SRV/TXT records
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch (dnsErr) {
+  console.warn('Failed to set custom DNS servers:', dnsErr.message);
+}
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+
+console.log("Mongo URI:", process.env.MONGO_URI);
 
 const app = express();
 
@@ -13,8 +23,8 @@ app.use(cors({
 app.use(express.json());
 
 // Database Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/linktrack')
-  .then(() => console.log('MongoDB connected to local database successfully.'))
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected successfully.'))
   .catch(err => {
     console.error('MongoDB database connection error:', err.message);
     process.exit(1);
